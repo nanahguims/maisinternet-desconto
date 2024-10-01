@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import "./style.css";
 
 export default function Home() {
-  const [value, setValue] = useState(0);
-  const [selectedMonth, setSelectedMonth] = useState('');
+    const [value, setValue] = useState(0);
+    const [selectedMonth, setSelectedMonth] = useState('');
     const [plano, setPlano] = useState(0)
     const [unit, setUnit] = useState('hours');
     const [copySuccess, setCopySuccess] = useState('Copiar');
