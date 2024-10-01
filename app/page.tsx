@@ -41,8 +41,8 @@ export default function Home() {
         return 0; 
       }
 
-        const daysInCurrentMonth = getDaysInSelectedMonth(); 
-        const discountMouth = plano/daysInCurrentMonth
+      const daysInCurrentMonth = getDaysInSelectedMonth(); 
+      const discountMouth = plano/daysInCurrentMonth
   
         if (unit === 'hours') {
             const discountDay = discountMouth/24
