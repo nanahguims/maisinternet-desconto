@@ -3,29 +3,26 @@ import React, { useState } from 'react';
 import "./style.css";
 
 export default function Home() {
-    const [value, setValue] = useState(0);
-    const [selectedMonth, setSelectedMonth] = useState('');
-    const [plano, setPlano] = useState(0)
-    const [unit, setUnit] = useState('hours');
-    const [copySuccess, setCopySuccess] = useState('Copiar');
+  const [value, setValue] = useState<string>('');
+  const [selectedMonth, setSelectedMonth] = useState<string>(''); 
+  const [plano, setPlano] = useState<string>('');
+  const [unit, setUnit] = useState<'hours' | 'days'>('hours'); 
+  const [copySuccess, setCopySuccess] = useState<string>('Copiar'); 
+  const handleMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedMonth(e.target.value);
+};
 
+const handlePlanoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPlano(e.target.value); 
+};
 
+const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value); 
+}
+const handleUnitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setUnit(e.target.value as 'hours' | 'days'); 
+};
 
-    const handleMonthChange = (e: any) => {
-      setSelectedMonth(e.target.value);
-    };
-
-    const handlePlanoChange = (e:any) => {
-        setPlano(e.target.value);
-    };
-
-    const handleValueChange = (e:any) => {
-        setValue(e.target.value);
-    };
-
-    const handleUnitChange = (e:any) => {
-        setUnit(e.target.value);
-    };
 
 
     const getDaysInSelectedMonth = () => {
@@ -59,7 +56,7 @@ export default function Home() {
      
     };
 
-      const formatToCurrency = (value:any) => {
+      const formatToCurrency = (value:number) => {
         return new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL',
@@ -67,7 +64,7 @@ export default function Home() {
         }).format(value);
       };
 
-      const copyToClipBoard = async (copyMe: any) => {
+      const copyToClipBoard = async (copyMe: string) => {
         try {
           await navigator.clipboard.writeText(copyMe); 
           setCopySuccess('Copied!');  
