@@ -8,20 +8,22 @@ export default function Home() {
   const [plano, setPlano] = useState<string>('');
   const [unit, setUnit] = useState<'hours' | 'days'>('hours'); 
   const [copySuccess, setCopySuccess] = useState<string>('Copiar'); 
+
+  
   const handleMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedMonth(e.target.value);
-};
+  };
 
-const handlePlanoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPlano(e.target.value); 
-};
+    const handlePlanoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPlano(e.target.value); 
+    };
 
-const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value); 
-}
-const handleUnitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setUnit(e.target.value as 'hours' | 'days'); 
-};
+    const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value); 
+    }
+    const handleUnitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setUnit(e.target.value as 'hours' | 'days'); 
+    };
 
 
 
