@@ -28,7 +28,7 @@ export default function Home() {
   const getDaysInSelectedMonth = (): number => {
     if (!selectedMonth) return 0;
     const [year, month] = selectedMonth.split("-").map(Number);
-    const daysInMonth = new Date(year, month, 0).getDate();
+    const daysInMonth = new Date(year, month, 0).getDate();  
     return daysInMonth;
   };
 
@@ -46,7 +46,7 @@ export default function Home() {
 
     if (unit === "hours") {
       const discountDay = discountMouth / 24;
-      return valueNumber <= 4 ? discountDay * 4 : discountDay * valueNumber;
+      return discountDay * valueNumber;
     } else if (unit === "days") {
       return discountMouth * valueNumber;
     }
